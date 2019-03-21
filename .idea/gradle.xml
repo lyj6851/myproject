@@ -12,6 +12,7 @@
             <option value="$PROJECT_DIR$/commom" />
             <option value="$PROJECT_DIR$/demo" />
             <option value="$PROJECT_DIR$/flowable" />
+            <option value="$PROJECT_DIR$/quartz" />
             <option value="$PROJECT_DIR$/server" />
           </set>
         </option>

@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: local
+    active: local-quartz
 
 swagger: #swagger相关配置
   groupName:

@@ -5,4 +5,5 @@ include 'demo'
 include 'demo'
 include 'flowable'
 include 'flowable'
+include 'quartz'
 

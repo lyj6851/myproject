@@ -13,6 +13,8 @@
       <module name="flowable_test" target="1.8" />
       <module name="myproject_main" target="1.8" />
       <module name="myproject_test" target="1.8" />
+      <module name="quartz_main" target="1.8" />
+      <module name="quartz_test" target="1.8" />
       <module name="server_main" target="1.8" />
       <module name="server_test" target="1.8" />
     </bytecodeTargetLevel>

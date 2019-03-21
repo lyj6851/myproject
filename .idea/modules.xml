@@ -14,6 +14,9 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/myproject.iml" filepath="$PROJECT_DIR$/.idea/modules/myproject.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/myproject_main.iml" filepath="$PROJECT_DIR$/.idea/modules/myproject_main.iml" group="myproject" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/myproject_test.iml" filepath="$PROJECT_DIR$/.idea/modules/myproject_test.iml" group="myproject" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/quartz.iml" filepath="$PROJECT_DIR$/.idea/modules/quartz.iml" group="quartz" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/quartz/quartz_main.iml" filepath="$PROJECT_DIR$/.idea/modules/quartz/quartz_main.iml" group="quartz" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/quartz/quartz_test.iml" filepath="$PROJECT_DIR$/.idea/modules/quartz/quartz_test.iml" group="quartz" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/server.iml" filepath="$PROJECT_DIR$/.idea/modules/server.iml" group="server" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/server/server_main.iml" filepath="$PROJECT_DIR$/.idea/modules/server/server_main.iml" group="server" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/server/server_test.iml" filepath="$PROJECT_DIR$/.idea/modules/server/server_test.iml" group="server" />
