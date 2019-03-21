@@ -1,0 +1,92 @@
+
+1、添加用户：
+接口：/api/user/addRbacUser
+报文：
+{
+  "branchCode": "9010100",
+  "branchName": "总公司",
+  "email": "1311843248@qq.com",
+  "mobile": "18158939927",
+  "password": "123456",
+  "userCode": "zhangsan",
+  "userLoginCode": "zhangsan",
+  "userName": "张三",
+  "userStatus": "1",
+  "createdBy": "system",
+  "createdOn": "2017-4-17 15:00:12"
+}
+
+2、添加UWTask任务信息：
+接口：/api/uwTask/addUwTask
+报文：
+{
+  "appNo": "AHH36423842SGH",
+  "branchCode": "3010100",
+  "createdBy": "zhangsan",
+  "createdOn": "2017-4-17 15:00:12",
+  "currentLevel": "0",
+  "insuredAmount": "300",
+  "operateVersion": 1,
+  "taskLevel": "5",
+  "taskStatus": "N"
+}
+
+3、添加用户审核机构：
+接口：/api/userRegion/addUserRegion
+报文：
+{
+  "createdBy": "ststem",
+  "createdOn": "2017-4-17 15:00:12",
+  "regionCode": "3010100",
+  "regionName": "上海分公司",
+  "userLoginCode": "zhangsan"
+}
+
+4、领取任务：
+接口：/api/uwTaskDetail/receiveTask
+报文：
+{
+  "handlerDTO": {
+    "handlerBranchCode": "9010100",
+    "handlerLevel": 5,
+    "handlerName": "张三",
+    "handlerNo": "zhangsan"
+  },
+  "taskDetailId": "1108330067005640706"
+}
+
+5、审核任务
+接口：/api/uwTaskDetail/auditTask
+报文：
+{
+  "auditCode": 1,
+  "auditReason": "测试审核",
+  "handleLevel": 5,
+  "taskDetailId": "1108330067005640706"
+}
+
+6、审核任务，指定下一任务审核人
+接口：/api/uwTaskDetail/completeTask
+报文：
+{
+  "auditCode": 1,
+  "auditReason": "测试审核指定下一任务处理人",
+  "handleLevel": 5,
+  "handlerDTO": {
+    "handlerBranchCode": "9010100",
+    "handlerLevel": 6,
+    "handlerName": "胡海丰",
+    "handlerNo": "huhaifeng"
+  },
+  "taskDetailId": "1108553708985163777"
+}
+
+7、添加分公司
+接口：/api/branch/addBranch
+报文：
+{
+  "branchCode": "3010100",
+  "branchName": "上海分公司",
+  "createdBy": "system",
+  "createdOn": "2017-4-17 15:00:12"
+}

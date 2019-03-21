@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hhf.task.mapper.UwTaskDetailHisMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.hhf.task.model.UwTaskDetailHis">
+        <id column="ID" property="id" />
+    <result column="OPERATE_VERSION" property="operateVersion" />
+    <result column="CREATED_BY" property="createdBy" />
+    <result column="UPDATED_BY" property="updatedBy" />
+    <result column="UPDATED_ON" property="updatedOn" />
+    <result column="CREATED_ON" property="createdOn" />
+        <result column="APP_NO" property="appNo" />
+        <result column="BRANCH_CODE" property="branchCode" />
+        <result column="TASK_LEVEL" property="taskLevel" />
+        <result column="CURRENT_LEVEL" property="currentLevel" />
+        <result column="FINAL_LEVEL" property="finalLevel" />
+        <result column="TASK_STATUS" property="taskStatus" />
+        <result column="AUDIT_CODE" property="auditCode" />
+        <result column="AUDIT_REASON" property="auditReason" />
+        <result column="HANDLER_NO" property="handlerNo" />
+        <result column="HANDLER_LEVEL" property="handlerLevel" />
+        <result column="HANDLER_BRANCH_CODE" property="handlerBranchCode" />
+        <result column="HANDLER_NAME" property="handlerName" />
+        <result column="INSURED_AMOUNT" property="insuredAmount" />
+        <result column="PROCESS_NODE_ID" property="processNodeId" />
+        <result column="PROCESS_NODE_NAME" property="processNodeName" />
+        <result column="PROCESS_TASK_ID" property="processTaskId" />
+        <result column="BUSINESS_NO" property="businessNo" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        OPERATE_VERSION,
+        CREATED_BY,
+        UPDATED_BY,
+        UPDATED_ON,
+        CREATED_ON,
+        ID, APP_NO, BRANCH_CODE, TASK_LEVEL, CURRENT_LEVEL, FINAL_LEVEL, TASK_STATUS, AUDIT_CODE, AUDIT_REASON, HANDLER_NO, HANDLER_LEVEL, HANDLER_BRANCH_CODE, HANDLER_NAME, INSURED_AMOUNT, PROCESS_NODE_ID, PROCESS_NODE_NAME, PROCESS_TASK_ID, BUSINESS_NO
+    </sql>
+
+</mapper>

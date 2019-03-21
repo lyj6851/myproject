@@ -1,0 +1,121 @@
+server:
+  port: 8090
+  servlet:
+    context-path: /flowable
+    session:
+      timeout: 1800
+
+logging:
+  level: 
+    root: INFO
+    org:
+      hibernate:
+        sql: DEBUG
+    druid:
+      sql:
+        DataSource: DEBUG
+        Connection: DEBUG
+        Statement: DEBUG
+        #ResultSet: DEBUG
+  #path: D:\workspace\log
+  #file: SpringBoot.log
+  #config: classpath:logback.xml
+
+spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss  #指定时间格式
+  session:
+    store-type: redis
+  redis:
+    host: localhost
+    port: 6379
+    password: 
+    timeout: 10000  #redis操作的超时时间
+    jedis:
+      pool:
+       maxActive: 5000 #最大连接数
+       maxIdle: 30 #最大空闲连接数
+       minIdle: 5 #最小空闲连接数
+       maxWait: 3000  #获取连接最大等待时间 ms  #default -1
+
+  mvc:
+    view:
+    #页面默认前缀目录
+      prefix: /WEB-INF/jsp/
+      #页面默认后缀目录
+      suffix: .jsp
+#  redis:
+#    database: 0
+#    pool:
+#      maxActive: 5000
+#      maxWait: 3000
+#      maxIdle: 30
+#      minIdle: 5
+#    timeout: 1000
+#    #redis cluster config
+#    password: 5tgb7ygv
+#    cluster.nodes: 10.186.125.235:7380,10.186.125.235:7381,10.186.125.235:7382,10.186.125.162:7380,10.186.125.162:7381,10.186.125.162:7382
+#    cluster.max-redirects: 6
+
+  datasource:
+    name: dataSource
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    #&nullCatalogMeansCurrent=true    mysql8 工作流自动建表
+    url: jdbc:mysql://localhost:3306/flowable?serverTimezone=GMT%2B8&nullCatalogMeansCurrent=true
+    username: root
+    password: root
+#    password: ${spring.datasource.druid.decrypt.password}  #密码使用阿里的加密机制
+#    druid: #druid相关配置
+#      initialSize: 5  # 初始化大小
+#      minIdle: 5  # 最小连接数
+#      maxActive: 200 # 最大连接数
+#      maxWait: 60000 # 配置获取连接等待超时的时间
+#      timeBetweenEvictionRunsMillis: 60000 # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+#      minEvictableIdleTimeMillis: 300000  # 配置一个连接在池中最小生存的时间，单位是毫秒
+#      validationQuery: SELECT 1 FROM DUAL #验证连接是否有效的sql
+#      testWhileIdle: true
+#      testOnBorrow: false #获取连接时先验证连接是否有效
+#      testOnReturn: false #归还连接时先验证连接是否有效
+#      poolPreparedStatements: true # 打开PSCache，并且指定每个连接上PSCache的大小
+#      maxPoolPreparedStatementPerConnectionSize: 20 # 打开PSCache，并且指定每个连接上PSCache的大小
+#      filters: config,stat,slf4j  # 配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+#      decrypt: #自定义的配置文件 druid 加密密码使用的公钥
+#        publickey: "MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAIduifpg/5512kcZHxoCNc7RIGGNPYy79bc1DQyBJ0RTahXM/mKc6d4Krp+myMfAws0GKEYdIvyzOIOoiN0r/4sCAwEAAQ=="
+#        password: "NyCbtcwLqJf/gmnrDIgsnZa92naqHYr7Ce4eY3+cKRpmBsP6rcA0Sg8kqa5J3UeD9IIG4SbHIL3JOaRyHwwAUw=="
+#      connectionProperties: druid.log.stmt.executableSql=true;druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000;config.decrypt=true;config.decrypt.key=${spring.datasource.druid.decrypt.publickey} # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
+#      useGlobalDataSourceStat: false # 合并多个DruidDataSource的监控数据
+      
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+    show-sql: true
+
+#mybatis-plus 配置，参考官方文档http://mp.baomidou.com
+mybatis-plus:
+  # 如果是放在src/main/java目录下 classpath:/com/yourpackage/*/mapper/*Mapper.xml
+  mapper-locations: classpath*:mapper/**/*Mapper.xml
+#  typeAliasesPackage: com.fndsoft.**.entity,com.fndsoft.**.eo,com.cpic.**.entity,com.cpic.**.eo  #类型别名扫描路径，多个package用逗号或者分号分隔
+  global-config:
+    # 数据库相关配置
+    db-config:
+      db-type: mysql  #数据库类型
+      id-type: id_worker  #主键类型  AUTO:"数据库ID自增", INPUT:"用户输入ID",ID_WORKER:"全局唯一ID (数字类型唯一ID)", UUID:"全局唯一ID UUID";
+      field-strategy: not_empty  #字段策略,新增和更新时用来动态判断是否处理空值。 IGNORED:"忽略判断",NOT_NULL:"非 NULL 判断"),NOT_EMPTY:"非空判断"
+      column-underline: true  #驼峰下划线转换
+      #数据库大写下划线转换
+      #capital-mode: true
+      #逻辑删除配置
+      logic-delete-value: 0
+      logic-not-delete-value: 1
+    #刷新mapper 调试神器
+    refresh: true #该配置不建议在生产环境打开
+    # 原生配置
+  configuration:
+    #配置返回数据库(column下划线命名&&返回java实体是驼峰命名)，自动匹配无需as（没开启这个，SQL需要写as： select user_id as userId）
+    map-underscore-to-camel-case: true
+    local-cache-scope: statement #1级缓存级别设置，默认为session级别
+    cache-enabled: false #禁用二级缓存
+    jdbc-type-for-null: 'null'  #配置JdbcTypeForNull, oracle数据库必须配置
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+

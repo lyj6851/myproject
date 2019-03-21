@@ -1,0 +1,8 @@
+rootProject.name = 'myproject'
+include 'commom'
+include 'server'
+include 'demo'
+include 'demo'
+include 'flowable'
+include 'flowable'
+

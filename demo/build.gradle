@@ -1,0 +1,29 @@
+group 'com.hhf'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+//repositories {
+//    mavenCentral()
+//}
+
+dependencies {
+    compile project(":commom")
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile('org.springframework.boot:spring-boot-starter-web')
+    //mybatis-plus
+    compile "com.baomidou:mybatis-plus-boot-starter:${mybatisPlusVersion}"
+    compile group: 'com.baomidou', name: 'mybatis-plus', version: "${mybatisPlusVersion}"
+    compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.11'
+    //lombok
+    compile('org.projectlombok:lombok')
+    //swagger
+    compile "io.springfox:springfox-swagger2:${springfoxSwagger2Version}"
+    compile "io.springfox:springfox-swagger-ui:${springfoxSwagger2Version}"
+    compile "io.springfox:springfox-petstore:${springfoxSwagger2Version}"
+    //阿里JSONOBJECT
+    compile('com.alibaba:fastjson:1.2.31')
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
+}

@@ -1,0 +1,49 @@
+spring:
+  profiles:
+    active: local
+
+swagger: #swagger相关配置
+  groupName:
+  title: 本地多模块系统后台服务
+  description: 基于SpringBoot的多模块系统后台服务
+  termsOfServiceUrl: 服务URL(termsOfServiceUrl)
+  version: 0.0.1
+  contactName: huhaifeng
+  contactUrl: http://127.0.0.1
+  contactEmail:
+  paths: /.*,/boot/.*,/categories/.*,/tags/.*,/entries/.*,/api/auto/.*
+  basePackages: com.hhf
+  license:
+  licenseUrl:
+  globalRequestParams[0]: #全局请求参数设置
+    paramType: header  #参数类型支持header, cookie, body, query
+    name: "jwt_token" #参数名称
+    description: 请求头添加token  #描述
+    paramValueType: string #参数值类型
+    defaultValue: "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTSEgzMDEiLCJjcmVhdGVkIjoxNTUxMDgzODgwODYzLCJleHAiOjE4NjY0NDM4ODIsImNvbnRlbnQiOiJ7XCJicmFuY2hDb2RlXCI6XCI5MDEwMTAwXCIsXCJjcmVhdGVEYXRlXCI6XCIyMDE5LTAyLTI1IDE2OjM4OjAwNzYzXCIsXCJleHRJbmZvXCI6bnVsbCxcIm9yZ0NvZGVcIjpcIjkwMTAxMDAuMDAwMDAwLiNYSi4jWEpcIixcInVzZXJJZFwiOjEwMDAyLFwidXNlckxvZ2luQ29kZVwiOlwiU0hIMzAxXCIsXCJ1c2VyTmFtZVwiOlwi5rWL6K-V55So5oi3MVwifSJ9.oFMIWYn35uG7dcquYLhGmKgswg_qBXJcUmNp2rsoOXqatux6AvalmpXpsPAQ_5fu_yf2icOV9m497n0TTtWwcw"
+    required: false #是否必填
+#  application:
+#    name: spirng-boot-rabbitmq-sender
+  # cache相关配置可以不用写，默认就是这个路径
+#  cache: 
+#    type: ehcache
+#    ehcache:
+#      config: classpath:/ehcache.xml
+      
+  #rabbitmq相关配置
+#  rabbitmq:
+#    host: 127.0.0.1
+#    port: 5672
+#    username: guest
+#    password: guest
+#    listener:
+#      simple:
+#        retry:
+#          max-attempts: 5   #最大重试次数
+#          enabled: true     #是否开启消费者重试（为false时关闭消费者重试，这时消费端代码异常会一直重复收到消息）
+#          initial-interval:  2000  #重试间隔时间（单位毫秒）
+#        default-requeue-rejected: false   #重试次数超过上面的设置之后是否丢弃（false不丢弃时需要写相应代码将该消息加入死信队列）
+#
+#
+    
+   

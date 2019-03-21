@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hhf.common.user.mapper.RbacUserMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.hhf.common.user.model.RbacUser">
+        <id column="ID" property="id" />
+    <result column="OPERATE_VERSION" property="operateVersion" />
+    <result column="CREATED_BY" property="createdBy" />
+    <result column="UPDATED_BY" property="updatedBy" />
+    <result column="UPDATED_ON" property="updatedOn" />
+        <result column="USER_CODE" property="userCode" />
+        <result column="USER_LOGIN_CODE" property="userLoginCode" />
+        <result column="USER_NAME" property="userName" />
+        <result column="PASSWORD" property="password" />
+        <result column="MOBILE" property="mobile" />
+        <result column="EMAIL" property="email" />
+        <result column="BRANCH_CODE" property="branchCode" />
+        <result column="BRANCH_NAME" property="branchName" />
+        <result column="USER_STATUS" property="userStatus" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        OPERATE_VERSION,
+        CREATED_BY,
+        UPDATED_BY,
+        UPDATED_ON,
+        ID, USER_CODE, USER_LOGIN_CODE, USER_NAME, PASSWORD, MOBILE, EMAIL, BRANCH_CODE, BRANCH_NAME, USER_STATUS
+    </sql>
+    <select id="getDispatchUsers"
+            resultType="com.hhf.common.user.dto.DispatchUserResDTO">
+        SELECT
+            t.USER_CODE as userCode,
+            t.USER_LOGIN_CODE as userLoginCode,
+            t.BRANCH_CODE as branchCode,
+            t.BRANCH_NAME as branchName,
+            t.USER_STATUS as userStatus,
+            t.EMAIL as email,
+            t.USER_NAME as userName,
+            t.MOBILE as mobile,
+            tu.LEVEL as level,
+            tu.REGION_CODE as regionCode,
+            tu.REGION_NAME as regionName
+        FROM
+            t_rbac_user t
+        LEFT JOIN t_user_region tu ON t.USER_LOGIN_CODE = tu.USER_LOGIN_CODE
+        WHERE t.USER_STATUS = '1'
+        <if test="branchCode != null and branchCode != ''">
+            AND tu.REGION_CODE = #{branchCode}
+        </if>
+        <!--<if test="taskCurrentLevel != null and taskCurrentLevel != ''">-->
+            <choose>
+                <when test="taskCurrentLevel &lt; branchMaxLevel">
+                    AND tu.LEVEL &gt; #{taskCurrentLevel} AND tu.LEVEL &lt;= #{branchMaxLevel}
+                </when>
+                <when test="taskCurrentLevel &gt;= branchMaxLevel">
+                    AND tu.LEVEL &gt; #{branchMaxLevel} AND tu. LEVEL &lt;= #{headMaxLevel}
+                </when>
+            </choose>
+        <!--</if>-->
+    </select>
+</mapper>

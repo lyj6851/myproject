@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/commom.iml" filepath="$PROJECT_DIR$/.idea/modules/commom.iml" group="commom" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/commom/commom_main.iml" filepath="$PROJECT_DIR$/.idea/modules/commom/commom_main.iml" group="commom" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/commom/commom_test.iml" filepath="$PROJECT_DIR$/.idea/modules/commom/commom_test.iml" group="commom" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/demo.iml" filepath="$PROJECT_DIR$/.idea/modules/demo.iml" group="demo" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/demo/demo_main.iml" filepath="$PROJECT_DIR$/.idea/modules/demo/demo_main.iml" group="demo" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/demo/demo_test.iml" filepath="$PROJECT_DIR$/.idea/modules/demo/demo_test.iml" group="demo" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/flowable.iml" filepath="$PROJECT_DIR$/.idea/modules/flowable.iml" group="flowable" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/flowable/flowable_main.iml" filepath="$PROJECT_DIR$/.idea/modules/flowable/flowable_main.iml" group="flowable" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/flowable/flowable_test.iml" filepath="$PROJECT_DIR$/.idea/modules/flowable/flowable_test.iml" group="flowable" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/myproject.iml" filepath="$PROJECT_DIR$/.idea/modules/myproject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/myproject_main.iml" filepath="$PROJECT_DIR$/.idea/modules/myproject_main.iml" group="myproject" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/myproject_test.iml" filepath="$PROJECT_DIR$/.idea/modules/myproject_test.iml" group="myproject" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/server.iml" filepath="$PROJECT_DIR$/.idea/modules/server.iml" group="server" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/server/server_main.iml" filepath="$PROJECT_DIR$/.idea/modules/server/server_main.iml" group="server" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/server/server_test.iml" filepath="$PROJECT_DIR$/.idea/modules/server/server_test.iml" group="server" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,33 @@
+group 'com.hhf'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+//repositories {
+//    mavenCentral()
+//}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile('com.alibaba:fastjson:1.2.4')
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.9.0' //JackSonUtil类需要的jar包
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.boot:spring-boot-starter-aop')
+    //baseEntity需要jar包
+    compile group: 'org.hibernate.javax.persistence', name: 'hibernate-jpa-2.1-api', version: '1.0.2.Final'
+    compile group: 'org.springframework.data', name: 'spring-data-commons', version: '2.0.11.RELEASE'
+    compile group: 'org.springframework.data', name: 'spring-data-jpa', version: '2.0.11.RELEASE'
+    //lombok
+    compile('org.projectlombok:lombok')
+    //swagger
+    compile "io.springfox:springfox-swagger2:${springfoxSwagger2Version}"
+    compile "io.springfox:springfox-swagger-ui:${springfoxSwagger2Version}"
+    compile "io.springfox:springfox-petstore:${springfoxSwagger2Version}"
+    //mybatis-plus
+    compile "com.baomidou:mybatis-plus-boot-starter:${mybatisPlusVersion}"
+    compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.11'
+    //generator自动代码  velocity依赖
+    compile group: 'org.apache.velocity', name: 'velocity-engine-core', version: '2.0'
+}
