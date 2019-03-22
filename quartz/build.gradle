@@ -1,0 +1,36 @@
+group 'com.hhf'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile project(":commom")
+    compile project(":flowable")
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    //实现web功能
+    compile('org.springframework.boot:spring-boot-starter-web')
+    //添加测试
+    testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '2.1.3.RELEASE'
+    //添加模板支持
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf', version: '2.1.3.RELEASE'
+    compile group: 'net.sourceforge.nekohtml', name: 'nekohtml', version: '1.9.21'
+    //添加JPA的支持
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '2.1.3.RELEASE'
+    //mysql的支持
+    compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.11'
+    //quartz的支持
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-quartz', version: '2.1.3.RELEASE'
+    //阿里的druid数据源
+    compile "com.alibaba:druid-spring-boot-starter:1.1.10"
+    compile "com.alibaba:druid:1.1.12"
+    //swagger
+    compile "io.springfox:springfox-swagger2:${springfoxSwagger2Version}"
+    compile "io.springfox:springfox-swagger-ui:${springfoxSwagger2Version}"
+    compile "io.springfox:springfox-petstore:${springfoxSwagger2Version}"
+}

@@ -98,7 +98,7 @@ spring:
         implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
 
-  # quartz任务配置
+  # quartz任务配置   quartz通过 StdJDBCDelegate 这个类操作数据库  数据库表名是根据封装的这个类中的sql语句建立的
   quartz:
     job-store-type: jdbc
     properties:
